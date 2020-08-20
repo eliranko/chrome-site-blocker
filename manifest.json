@@ -1,12 +1,13 @@
 {
     "name": "URL Blocker",
-    "version": "1.1",
+    "version": "1.2",
     "description": "Block URLs",
     "permissions": [
         "tabs",
         "activeTab",
         "http://*/",
-        "https://*/"
+        "https://*/",
+        "storage"
     ],
     "icons": {
         "16": "images/get_started16.png",
@@ -19,6 +20,9 @@
             "background.js"
         ],
         "persistent": false
+    },
+    "browser_action": {
+        "default_popup": "popup.html"
     },
     "manifest_version": 2
 }
