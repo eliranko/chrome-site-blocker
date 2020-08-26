@@ -26,12 +26,12 @@ aAdd.addEventListener('click', () => {
 
 const aRemove = document.getElementById("remove-site");
 aRemove.addEventListener('click', () => {
-    const location = parseInt(document.getElementById("location").value);
+    const index = parseInt(document.getElementById("index").value);
 
     chrome.storage.sync.get('sites', function (data) {
-        if (location >= data.sites.length) return;
+        if (index >= data.sites.length) return;
 
-        data.sites.splice(location);
+        data.sites.splice(index, 1);
         chrome.storage.sync.set({ sites: [...data.sites] });
         refreshSites();
     });
